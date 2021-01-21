@@ -96,7 +96,8 @@
 			"Keyboard",
 			"atkState",
 			"Array",
-			"Text2"
+			"Text2",
+			"Sprite2"
 		],
 		"subfolders": []
 	},
