@@ -1,0 +1,125 @@
+{
+	"name": "Sprite",
+	"plugin-id": "Sprite",
+	"sid": 619697352174647,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "idle",
+			"type": "boolean",
+			"desc": "",
+			"sid": 350090992990101
+		},
+		{
+			"name": "atk",
+			"type": "boolean",
+			"desc": "",
+			"sid": 755896715107065
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 514429908490134
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 224551647498466
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 198557621751615
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 400,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1278921,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 238460063041236,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 400,
+						"height": 400,
+						"originX": 0.4612903225806452,
+						"originY": 0.45483870967741935,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3482153,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 400,
+						"height": 400,
+						"originX": 0.4612903225806452,
+						"originY": 0.45483870967741935,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7634591,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 400,
+						"height": 400,
+						"originX": 0.4612903225806452,
+						"originY": 0.45483870967741935,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5350636,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 400,
+						"height": 400,
+						"originX": 0.4612903225806452,
+						"originY": 0.45483870967741935,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5234730,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 751687413357101,
+				"name": "atk",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

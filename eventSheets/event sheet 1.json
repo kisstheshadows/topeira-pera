@@ -1,0 +1,322 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "diretionX",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 256367031701728
+		},
+		{
+			"eventType": "variable",
+			"name": "impulsoAtaque",
+			"type": "number",
+			"initialValue": "30000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 191055569817568
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 576759667021956,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "Sprite",
+					"sid": 721875177788015,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "1.0",
+						"type": "once",
+						"tag": "\"atkTimer\""
+					}
+				}
+			],
+			"sid": 385027899341725
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-timer-running",
+					"objectClass": "Sprite",
+					"sid": 423819051493422,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"atkTimer\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 294936595395265,
+					"parameters": {
+						"instance-variable": "atk",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 363487924729732
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 946545546746765
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 984276660948578,
+					"parameters": {
+						"instance-variable": "atk",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 205694751470356
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 147248948689431
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "atkState",
+					"sid": 142189665177372,
+					"disabled": true,
+					"parameters": {
+						"text": "Sprite.atk"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "atkState",
+					"sid": 173323374096811,
+					"disabled": true,
+					"parameters": {
+						"text": "Sprite.Timer.CurrentTime(\"atkTimer\")"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "atkState",
+					"sid": 618839632764172,
+					"parameters": {
+						"text": "Sprite.atk"
+					}
+				}
+			],
+			"sid": 919377067678526
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 149069889526166,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "Sprite",
+					"sid": 561827611423960,
+					"parameters": {
+						"angle": "180"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 939745245197319,
+					"parameters": {
+						"variable": "diretionX",
+						"value": "-1"
+					}
+				}
+			],
+			"sid": 758148622232327
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 828336039859334,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 831395224341937,
+					"parameters": {
+						"variable": "diretionX",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Sprite",
+					"sid": 242026321605473,
+					"parameters": {
+						"angle": "0"
+					}
+				}
+			],
+			"sid": 295919351768418
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Sprite",
+					"sid": 163763557271428,
+					"parameters": {
+						"instance-variable": "atk"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-x",
+					"objectClass": "Sprite",
+					"sid": 273566617719385,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-x": "diretionX*impulsoAtaque*dt"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Sprite",
+					"sid": 427091846865827,
+					"parameters": {
+						"animation": "\"atk\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 659961150213159
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 620100325705042
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Sprite",
+					"sid": 559272288912593,
+					"parameters": {
+						"animation": "\"idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 264865894935224
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "addStateToArray",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Sprite",
+							"sid": 897782703940777,
+							"parameters": {
+								"instance-variable": "atk"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "push",
+							"objectClass": "Array",
+							"sid": 955602164543931,
+							"parameters": {
+								"where": "back",
+								"value": "0",
+								"axis": "x"
+							}
+						}
+					],
+					"sid": 869811252850260
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 905233621577392
+						}
+					],
+					"actions": [],
+					"sid": 954351925707509
+				}
+			],
+			"sid": 641410028094906
+		},
+		{
+			"functionName": "RemoveValueArray",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 809851317962908
+		}
+	],
+	"sid": 218381380370644
+}
