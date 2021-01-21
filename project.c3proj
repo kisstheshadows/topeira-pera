@@ -97,7 +97,8 @@
 			"atkState",
 			"Array",
 			"Text2",
-			"Sprite2"
+			"Sprite2",
+			"Sprite3"
 		],
 		"subfolders": []
 	},
@@ -252,7 +253,7 @@
 		"gpuPreference": "high-performance",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
-		"sampling": "trilinear",
+		"sampling": "nearest",
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "splash",
